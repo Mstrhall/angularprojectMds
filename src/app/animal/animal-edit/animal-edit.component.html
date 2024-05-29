@@ -1,0 +1,43 @@
+<div *ngIf="animalForm">
+  <h2>Modifier Bestiole</h2>
+  <form [formGroup]="animalForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Nom</label>
+      <input id="name" formControlName="name" />
+      <div *ngIf="f['name'].touched && f['name'].invalid">
+        <small *ngIf="f['name'].errors?.['required']">Le nom est requis.</small>
+        <small *ngIf="f['name'].errors?.['minlength']">Le nom doit contenir au moins 2 caractères.</small>
+      </div>
+    </div>
+    <div>
+      <label for="speciesCommonName">Nom commun</label>
+      <input id="speciesCommonName" formControlName="species.commonName" />
+      <div *ngIf="f['species.commonName'].touched && f['species.commonName'].invalid">
+        <small *ngIf="f['species.commonName'].errors?.['required']">Le nom commun est requis.</small>
+      </div>
+    </div>
+    <div>
+      <label for="speciesLatinName">Nom latin</label>
+      <input id="speciesLatinName" formControlName="species.latinName" />
+      <div *ngIf="f['species.latinName'].touched && f['species.latinName'].invalid">
+        <small *ngIf="f['species.latinName'].errors?.['required']">Le nom latin est requis.</small>
+      </div>
+    </div>
+    <div>
+      <label for="color">Couleur</label>
+      <input id="color" formControlName="color" />
+      <div *ngIf="f['color'].touched && f['color'].invalid">
+        <small *ngIf="f['color'].errors?.['required']">La couleur est requise.</small>
+      </div>
+    </div>
+    <div>
+      <label for="sex">Sexe</label>
+      <input id="sex" formControlName="sex" />
+      <div *ngIf="f['sex'].touched && f['sex'].invalid">
+        <small *ngIf="f['sex'].errors?.['required']">Le sexe est requis.</small>
+      </div>
+    </div>
+    <button type="submit" [disabled]="animalForm.invalid">Sauvegarder</button>
+    <button type="button" (click)="onCancel()">Annuler</button>
+  </form>
+</div>

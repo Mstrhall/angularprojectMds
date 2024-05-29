@@ -1,0 +1,25 @@
+<div *ngIf="speciesForm" class="container">
+  <h2>Modifier une espèce</h2>
+  <form [formGroup]="speciesForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="commonName">Nom Commun</label>
+      <input id="commonName" formControlName="commonName" />
+      <div *ngIf="f['commonName'].touched && f['commonName'].invalid">
+        <small *ngIf="f['commonName'].errors?.['required']">Le nom commun est requis.</small>
+        <small *ngIf="f['commonName'].errors?.['minlength']">Le nom commun doit contenir au moins 2 caractères.</small>
+      </div>
+    </div>
+    <div>
+      <label for="latinName">Nom Latin</label>
+      <input id="latinName" formControlName="latinName" />
+      <div *ngIf="f['latinName'].touched && f['latinName'].invalid">
+        <small *ngIf="f['latinName'].errors?.['required']">Le nom latin est requis.</small>
+        <small *ngIf="f['latinName'].errors?.['minlength']">Le nom latin doit contenir au moins 2 caractères.</small>
+      </div>
+    </div>
+    <!-- Champ caché pour l'ID -->
+    <input type="hidden" formControlName="id" />
+    <button type="submit" [disabled]="speciesForm.invalid">Enregistrer</button>
+    <button type="button" (click)="onCancel()">Annuler</button>
+  </form>
+</div>

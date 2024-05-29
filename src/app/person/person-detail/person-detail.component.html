@@ -1,0 +1,29 @@
+<div *ngIf="person" class="container">
+  <h2>Détails de la Personne</h2>
+  <div class="detail">
+    <div>
+      <strong>Nom:</strong> <span>{{ person.lastName }}</span>
+    </div>
+    <div>
+      <strong>Prénom:</strong> <span>{{ person.firstName }}</span>
+    </div>
+    <div>
+      <strong>Âge:</strong> <span>{{ person.age }}</span>
+    </div>
+  </div>
+
+  <div *ngIf="person.animals && person.animals.length > 0" class="animals">
+    <h3>Animaux Possédés</h3>
+    <ul>
+      <li *ngFor="let animal of person.animals">
+        <strong>{{ animal.name }}</strong> ({{ animal.species.commonName }})
+      </li>
+    </ul>
+  </div>
+
+  <div class="actions">
+    <button (click)="goBack()">Retour à la liste</button>
+    <button class="secondary" (click)="editPerson()">Modifier</button>
+    <button (click)="deletePerson()">Supprimer</button>
+  </div>
+</div>

@@ -1,0 +1,108 @@
+/* Variables */
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-color: #fff;
+$background-color: #f4f4f4;
+$border-color: #ddd;
+$input-background-color: #fff;
+$input-border-color: #ccc;
+$input-focus-border-color: $primary-color;
+$error-color: #e74c3c;
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $font-color;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+}
+
+h2 {
+  color: $primary-color;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid $input-border-color;
+      border-radius: 5px;
+      background-color: $input-background-color;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: $input-focus-border-color;
+        outline: none;
+      }
+    }
+
+    small {
+      color: $error-color;
+      display: block;
+      margin-top: 5px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+      background-color: $primary-color;
+      color: $font-color;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+      margin-right: 10px;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+
+      &.secondary {
+        background-color: $secondary-color;
+
+        &:hover {
+          background-color: darken($secondary-color, 10%);
+        }
+      }
+
+      &:disabled {
+        background-color: lighten($primary-color, 30%);
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+/* Styles pour le deuxième formulaire */
+/* Si vous avez un deuxième formulaire avec des styles distincts, vous pouvez les ajouter ici */

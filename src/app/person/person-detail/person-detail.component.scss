@@ -1,0 +1,113 @@
+/* Variables */
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-color: #fff;
+$background-color: #f4f4f4;
+$border-color: #ddd;
+$detail-background-color: #fff;
+$button-background-color: $primary-color;
+$button-hover-color: darken($primary-color, 10%);
+$button-secondary-background-color: $secondary-color;
+$button-secondary-hover-color: darken($secondary-color, 10%);
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $detail-background-color;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+}
+
+h2 {
+  color: $primary-color;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    strong {
+      font-weight: bold;
+      color: $primary-color;
+    }
+  }
+}
+
+.animals {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  background-color: $background-color;
+
+  h3 {
+    color: $primary-color;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      padding: 10px;
+      border-bottom: 1px solid $border-color;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  button {
+    background-color: $button-background-color;
+    color: $font-color;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-right: 10px;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+
+    &.secondary {
+      background-color: $button-secondary-background-color;
+
+      &:hover {
+        background-color: $button-secondary-hover-color;
+      }
+    }
+  }
+}

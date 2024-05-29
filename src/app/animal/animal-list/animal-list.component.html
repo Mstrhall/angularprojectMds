@@ -1,0 +1,20 @@
+<div>
+  <button (click)="navigateToCreate()">Créer une nouvelle bestiole</button>
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher..." (input)="search()">
+  <table>
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Espèce</th>
+      <th>Couleur</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let animal of animals">
+      <td (click)="viewAnimal(animal.id)">{{ animal.name }}</td>
+      <td>{{ animal.species.commonName }}</td>
+      <td>{{ animal.color }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

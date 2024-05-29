@@ -1,0 +1,66 @@
+/* Variables */
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-color: #fff;
+$background-color: #f4f4f4;
+$border-color: #ddd;
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  color: $primary-color;
+  text-align: center;
+}
+
+.detail {
+  background-color: $font-color;
+  border: 1px solid $border-color;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.detail div {
+  margin-bottom: 10px;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  background-color: $primary-color;
+  color: $font-color;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+button.secondary {
+  background-color: $secondary-color;
+}
+
+button.secondary:hover {
+  background-color: darken($secondary-color, 10%);
+}

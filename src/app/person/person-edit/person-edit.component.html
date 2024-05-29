@@ -1,0 +1,37 @@
+<div *ngIf="personForm">
+  <h2>Éditer Personne</h2>
+  <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="id">ID</label>
+      <input id="id" formControlName="id"  />
+    </div>
+    <div>
+      <label for="firstName">Prénom</label>
+      <input id="firstName" formControlName="firstName" />
+      <div *ngIf="f['firstName'].touched && f['firstName'].invalid">
+        <small *ngIf="f['firstName'].errors?.['required']">Le prénom est requis.</small>
+        <small *ngIf="f['firstName'].errors?.['minlength']">Le prénom doit contenir au moins 2 caractères.</small>
+      </div>
+    </div>
+    <div>
+      <label for="lastName">Nom</label>
+      <input id="lastName" formControlName="lastName" />
+      <div *ngIf="f['lastName'].touched && f['lastName'].invalid">
+        <small *ngIf="f['lastName'].errors?.['required']">Le nom est requis.</small>
+        <small *ngIf="f['lastName'].errors?.['minlength']">Le nom doit contenir au moins 2 caractères.</small>
+      </div>
+    </div>
+    <div>
+      <label for="age">Âge</label>
+      <input id="age" type="number" formControlName="age" />
+      <div *ngIf="f['age'].touched && f['age'].invalid">
+        <small *ngIf="f['age'].errors?.['required']">L'âge est requis.</small>
+        <small *ngIf="f['age'].errors?.['min']">L'âge doit être au moins de 1.</small>
+      </div>
+    </div>
+    <!-- Ajoutez d'autres champs si nécessaire -->
+
+    <button type="submit" [disabled]="personForm.invalid">Sauvegarder</button>
+    <button type="button" (click)="onCancel()">Annuler</button>
+  </form>
+</div>

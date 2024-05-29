@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Liste des Espèces</h2>
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Rechercher..." (input)="search()" />
+    <button (click)="createSpecies()">Créer une Espèce</button>
+  </div>
+  <div class="table-container" *ngIf="speciesList && speciesList.length > 0; else noData">
+    <table>
+      <thead>
+      <tr>
+        <th>Nom Commun</th>
+        <th>Nom Latin</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let species of speciesList">
+        <td>{{ species.commonName }}</td>
+        <td>{{ species.latinName }}</td>
+        <td>
+          <button (click)="viewSpecies(species.id)">Voir</button>
+          <button class="secondary" (click)="editSpecies(species.id)">Modifier</button>
+          <button (click)="deleteSpecies(species.id)">Supprimer</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noData>
+    <div class="no-data">
+      Aucune espèce trouvée.
+    </div>
+  </ng-template>
+</div>

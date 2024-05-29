@@ -1,0 +1,45 @@
+<div *ngIf="animalForm">
+  <h2>Créer une nouvelle bestiole</h2>
+  <form [formGroup]="animalForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Nom</label>
+      <input id="name" formControlName="name" />
+      <div *ngIf="f['name'].touched && f['name'].invalid">
+        <small *ngIf="f['name'].errors?.['required']">Le nom est requis.</small>
+        <small *ngIf="f['name'].errors?.['minlength']">Le nom doit contenir au moins 2 caractères.</small>
+      </div>
+    </div>
+    <div>
+      <label for="color">Couleur</label>
+      <input id="color" formControlName="color" />
+      <div *ngIf="f['color'].touched && f['color'].invalid">
+        <small *ngIf="f['color'].errors?.['required']">La couleur est requise.</small>
+      </div>
+    </div>
+    <div>
+      <label for="sex">Sexe</label>
+      <div>
+        <input type="radio" id="male" formControlName="sex" value="M" />
+        <label for="male">M</label>
+        <input type="radio" id="female" formControlName="sex" value="F" />
+        <label for="female">F</label>
+      </div>
+      <div *ngIf="f['sex'].touched && f['sex'].invalid">
+        <small *ngIf="f['sex'].errors?.['required']">Le sexe est requis.</small>
+      </div>
+    </div>
+    <div>
+      <label for="speciesId">Espèce</label>
+      <select id="speciesId" formControlName="speciesId">
+        <option *ngFor="let species of speciesList" [value]="species.id">
+          {{ species.commonName }} ({{ species.latinName }})
+        </option>
+      </select>
+      <div *ngIf="f['speciesId'].touched && f['speciesId'].invalid">
+        <small *ngIf="f['speciesId'].errors?.['required']">L'espèce est requise.</small>
+      </div>
+    </div>
+    <button type="submit" [disabled]="animalForm.invalid">Créer</button>
+    <button type="button" (click)="onCancel()">Annuler</button>
+  </form>
+</div>

@@ -1,0 +1,141 @@
+/* Variables */
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-color: #fff;
+$background-color: #f4f4f4;
+$border-color: #ddd;
+$input-background-color: #fff;
+$input-border-color: #ccc;
+$input-focus-border-color: #3498db;
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  color: $primary-color;
+  text-align: center;
+}
+
+button {
+  background-color: $secondary-color;
+  color: $font-color;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid $input-border-color;
+  border-radius: 5px;
+  background-color: $input-background-color;
+  transition: border-color 0.3s ease;
+  margin-bottom: 20px;
+
+  &:focus {
+    border-color: $input-focus-border-color;
+    outline: none;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background-color: $primary-color;
+    color: $font-color;
+
+    th {
+      padding: 10px;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: $background-color;
+      }
+
+      &:hover {
+        background-color: lighten($background-color, 10%);
+      }
+
+      td {
+        padding: 10px;
+        border-bottom: 1px solid $border-color;
+        cursor: pointer;
+
+        &:first-child {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+/* Styles pour le formulaire */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc; // Vous pouvez remplacer cela par $input-border-color si nécessaire
+  border-radius: 4px;
+}
+
+small {
+  color: red;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+button[type="button"] {
+  background-color: #dc3545;
+  color: white;
+}
+
+button[type="button"]:hover {
+  background-color: #c82333;
+}

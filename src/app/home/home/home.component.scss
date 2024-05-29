@@ -1,0 +1,65 @@
+/* Variables */
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-color: #fff;
+$background-color: #f4f4f4;
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  color: $primary-color;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.header p {
+  color: $secondary-color;
+  font-size: 1.2em;
+  margin: 5px 0 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  background-color: $primary-color;
+  color: $font-color;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+button.secondary {
+  background-color: $secondary-color;
+}
+
+button.secondary:hover {
+  background-color: darken($secondary-color, 10%);
+}

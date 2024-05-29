@@ -1,0 +1,16 @@
+<div *ngIf="species" class="container">
+  <h2>Détails de l'espèce</h2>
+  <div class="detail">
+    <div>
+      <strong>Nom Commun:</strong> {{ species.commonName }}
+    </div>
+    <div>
+      <strong>Nom Latin:</strong> {{ species.latinName }}
+    </div>
+    <div class="actions">
+      <button (click)="goBack()">Retour à la liste</button>
+      <button class="secondary" (click)="editSpecies()">Modifier</button>
+      <button (click)="deleteSpecies()">Supprimer</button>
+    </div>
+  </div>
+</div>
